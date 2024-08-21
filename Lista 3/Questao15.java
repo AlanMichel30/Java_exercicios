@@ -3,19 +3,17 @@ import java.util.Scanner;
 public class Questao15 {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
-        int contador = 0;
-        int num;
+        int soma = 0;
 
-        for (int i = 1; i <= 20; i++) {
-            System.out.print("Digite um número " + i + ": ");
-            num = s.nextInt();
+        while (true) {
+            System.out.print("Digite um número (ou um número negativo para encerrar): ");
+            int numero = s.nextInt();
 
-            if (num >= 0 && num <= 100) {
-                contador++;
+            if (numero < 0) {
+                break;
             }
+            soma += numero;
         }
-        System.out.println("Quantos de números entre 0 e 100: " + contador);
-
+        System.out.println("A soma dos números digitados é: " + soma);
     }
 }
-
