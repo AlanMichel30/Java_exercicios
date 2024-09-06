@@ -1,25 +1,23 @@
-public class Volei extends Esporte{
-    private String praia;
+public class Volei extends Esporte {
+    private String feminino;
 
     private int pessoas;
 
-    public Volei(String nome, int numero_de_jogadores, double tempo_de_jogo, String praia, int pessoas) {
+    public Volei(String nome, int numero_de_jogadores, double tempo_de_jogo, String feminino, int pessoas) {
         super(nome, numero_de_jogadores, tempo_de_jogo);
-        this.praia = praia;
+        this.feminino = feminino;
         this.pessoas = pessoas;
     }
 
-    public Volei(String praia, int pessoas) {
-        this.praia = praia;
-        this.pessoas = pessoas;
+    public Volei() {
     }
 
-    public String getPraia() {
-        return praia;
+    public String getFeminino() {
+        return feminino;
     }
 
-    public void setPraia(String praia) {
-        this.praia = praia;
+    public void setFeminino(String feminino) {
+        this.feminino = feminino;
     }
 
     public int getPessoas() {
@@ -29,4 +27,14 @@ public class Volei extends Esporte{
     public void setPessoas(int pessoas) {
         this.pessoas = pessoas;
     }
+
+    @Override
+    public String toString() {
+        return "Volei{" +
+                "feminino='" + feminino + '\'' +
+                ", pessoas=" + pessoas +
+                super.toString()+
+                '}';
+    }
 }
+
