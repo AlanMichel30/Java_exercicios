@@ -35,4 +35,13 @@ public abstract class Esporte {
     public void setTempo_de_jogo(double tempo_de_jogo) {
         this.tempo_de_jogo = tempo_de_jogo;
     }
+
+    @Override
+    public String toString() {
+        return "Esporte{" +
+                "nome='" + nome + '\'' +
+                ", numero_de_jogadores=" + numero_de_jogadores +
+                ", tempo_de_jogo=" + tempo_de_jogo +
+                '}';
+    }
 }
