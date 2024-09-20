@@ -1,14 +1,23 @@
+import java.util.Date;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner s = new Scanner(System.in);
+        Livro livro1 = new Livro("O Senhor dos Anéis", "J.R.R. Tolkien", "978-8578271234");
+        Livro livro2 = new Livro("1984", "George Orwell", "978-0451524935");
+        Livro livro3 = new Livro("Dom Quixote", "Miguel de Cervantes", "978-8491050189");
 
-       Livro livro = new Livro("Use a Cabeça Java – 3ª Edição: Guia do Aprendiz Para Programação no Mundo Real ","Kathy Sierra","8550819883");
-       Usuario usuario = new Usuario("Alan michel", "123.456.789-10");
-       Usuario usuario2 = new Usuario("João Miguel", "123.456.123-11");
-       usuario.emprestar(livro);
-          System.out.println(livro);
+        Usuario usuario1 = new Usuario("Alan Michel", "123.456.789-00");
+
+        Biblioteca biblioteca = new Biblioteca();
+
+        biblioteca.emprestarLivro(usuario1, livro1, new Date());
+        biblioteca.emprestarLivro(usuario1, livro2, new Date());
+        biblioteca.emprestarLivro(usuario1, livro3, new Date());
+
+        Livro livro4 = new Livro("Moby Dick", "Herman Melville", "978-0142437247");
+        biblioteca.emprestarLivro(usuario1, livro4, new Date());
+
+        biblioteca.devolverLivro(usuario1, livro1, new Date());
     }
-
 }

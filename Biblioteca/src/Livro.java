@@ -1,7 +1,7 @@
 public  class Livro {
     private String titulo;
     private String autor;
-    private String isbon;//usuario está herdando de livro, ai precisa passar, mas n precisa herdar., pq livro n tem nada em comum com usuario
+    private String isbon;
     private boolean isEmprestado;
 
     public Livro(String titulo, String autor, String isbon) {

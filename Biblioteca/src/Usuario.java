@@ -1,52 +1,38 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Usuario {
+class Usuario {
     private String nome;
     private String cpf;
+    private List<Livro> livrosEmprestados;
 
-    private List<Livro> livros;
-
-
-    public Usuario(String nome, String cpf){
+    public Usuario(String nome, String cpf) {
         this.nome = nome;
         this.cpf = cpf;
-        this.livros = new ArrayList<>();
-    }
-
-    public String getCpf() {
-        return cpf;
-    }
-
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
+        this.livrosEmprestados = new ArrayList<>();
     }
 
     public String getNome() {
         return nome;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public String getCpf() {
+        return cpf;
     }
 
-    public void emprestar(Livro livro){
-        if(livros.size()>= 3 && !livro.isEmprestado()){
-            System.out.println(nome + " já possui 3 livros emprestados.");
-        }else{
-            livros.add(livro);
-            livro.setEmprestado(true);
-            //System.out.println(nome + " Num livro não pode ser emprestado se já estiver emprestado a outro usuário.");
-        }
+    public List<Livro> getLivrosEmprestados() {
+        return livrosEmprestados;
     }
-//verfica se funciona para quando o livro for emprestado
-    @Override
-    public String toString() {
-        return "Usuario{" +
-                "nome='" + nome + '\'' +
-                ", cpf='" + cpf + '\'' +
-                ", livros=" + livros +
-                toString() +
-                '}';
+    public boolean adicionarLivroEmprestado(Livro livro) {
+        if (livrosEmprestados.size() >= 3) {
+            System.out.println("Usuário já possui 3 livros emprestados.");
+            return false;
+        }
+        livrosEmprestados.add(livro);
+        return true;
+    }
+
+    public void removerLivroEmprestado(Livro livro) {
+        livrosEmprestados.remove(livro);
     }
 }
